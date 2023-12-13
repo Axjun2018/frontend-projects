@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* set background as a gradient image */
+    background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+    font-family: 'Robot', sans-serif;
+    /* horizontal layout in default*/
+    display: flex;
+    /*horizontal center*/
+    align-items: center;
+    /*vertical center*/
+    justify-content: center;
+    /*set view high*/
+    height: 100vh;
+    /*hide scroll bar*/
+    overflow: hidden;
+    margin: 0;
+}
+
+.search {
+    position: relative;
+    height: 50px;
+}
+
+.search .input {
+    background-color: #fff;
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+.btn {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    /* Set search button has absolute position with input: overlapped */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transition: tranform 0.3s ease;
+}
+
+.btn:focus,
+.input:focus {
+    outline: none;
+}
+
+
+/* When search has been added active status:
+input width change to 200px */
+.search.active .input {
+    width: 200px;
+}
+
+/* btn horizontally move to right */
+.search.active .btn {
+    transform: translateX(198px);
+}

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+
+    /* horizontal layout in default*/
+    display: flex;
+
+    /*horizontal center*/
+    align-items: center;
+
+    /*vertical center*/
+    justify-content: center;
+
+    /*set view high*/
+    height: 100vh;
+
+    /*hide scroll bar*/
+    overflow: hidden;
+
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+}
+
+/*The default panel looking */
+.panel {
+    background-size: cover 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+/*The active panel looking */
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    /* opacity from 0 to 1 sets 0.3s, ease-in animation sets 0.4s */
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* when width is under 480px */
+@media(max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+
+    /* set 4th and 5th panel invisible */
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}

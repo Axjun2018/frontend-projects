@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Robot', sans-serif;
+
+    /* horizontal layout in default*/
+    display: flex;
+    flex-direction: column;
+
+    /*horizontal center*/
+    align-items: center;
+
+    /*vertical center*/
+    justify-content: center;
+
+    /*set view high*/
+    height: 100vh;
+
+    /*hide scroll bar*/
+    overflow: hidden;
+
+    margin: 0;
+}

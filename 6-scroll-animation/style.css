@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap');
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #efedd6;
+    font-family: 'Robot', sans-serif;
+    /* horizontal layout in default*/
+    display: flex;
+    flex-direction: column;
+    /*horizontal center*/
+    align-items: center;
+    /*vertical center*/
+    justify-content: center;
+    margin: 0;
+    /* hide x-axis scroll bar */
+    overflow-x: hidden;
+}
+
+h1 {
+    margin: 10px;
+}
+
+.box {
+    background-color: steelblue;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(200%);
+    transition: transform 0.4s ease;
+}
+
+/* Select even index box initially moving to left 
+the odd index boxes are de
+*/
+.box:nth-of-type(even) {
+    transform: translateX(-200%)
+}
+
+.box.show {
+    /* go back the initial position in parent setting(means body here) */
+    transform: translateX(0);
+}
+
+.box h2 {
+    font-size: 45px;
+}

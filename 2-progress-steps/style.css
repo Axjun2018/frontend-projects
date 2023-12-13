@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* Define customized propertize at :root scope 
+Then we can use it later by var(--property-name);
+*/
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+}
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f6f7fb;
+    font-family: 'Muli', sans-serif;
+
+    /* horizontal layout in default*/
+    display: flex;
+    flex-direction: column;
+
+    /*horizontal center*/
+    align-items: center;
+
+    /*vertical center*/
+    justify-content: center;
+
+    /*set view high*/
+    height: 100vh;
+
+    /*hide scroll bar*/
+    overflow: hidden;
+
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.progress-container {
+    /* flex makes progress numbers display horizontally */
+    display: flex;
+    /* add even gaps for each div number section under parent container */
+    justify-content: space-between;
+    /* change relatively */
+    position: relative;
+    margin-bottom: 30px;
+    /* 100% means contents occupied 100% width */
+    max-width: 100%;
+    /* set container width */
+    width: 350px;
+}
+
+/* progress line background line */
+.progress-container::before {
+    /* When use 'before', we need add content with empty string, then it can display */
+    content: '';
+    background-color: var(--line-border-empty);
+    /* preset a position value */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+/* progress line */
+.progress {
+    background-color: var(--line-border-fill);
+    /* preset a position value */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    /* filling line by assign width */
+    width: 0%;
+    z-index: -1;
+    /* we click, the line transition to another number: .4 seconds with ease effection */
+    transition: .4s ease;
+
+}
+
+/* style circle */
+.circle {
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #e0e0e0;
+    transition: .4s ease;
+}
+
+/* style active circle */
+.circle.active {
+    border-color: var(--line-border-fill);
+}
+
+/* style btn */
+.btn {
+    background-color: var(--line-border-fill);
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    /* when mice move on this item, mice become a pointer */
+    cursor: pointer;
+    font-family: inherit;
+    /* padding expands space from inner content to border: around width */
+    padding: 8px 30px;
+    /* surround margin*/
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active {
+    /* when item is active, when click it, its scale changes */
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:disabled {
+    background-color: var(--line-border-empty);
+    /* not-allowed cursor style */
+    cursor: not-allowed;
+}

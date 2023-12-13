@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    /* The nav's background is the same with body */
+    background-color: #333;
+    color: #222;
+
+    /*hide scroll bar at x-axis: horizontally not scrollable*/
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.container {
+    /* container with main content sets to white background */
+    background-color: #fafafa;
+    /* Static: Set the rotation point */
+    transform-origin: top left;
+    /* make trasform property transited smoothly by seting time and style */
+    transition: transform 0.5s linear;
+    /* set content size */
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.container.show-nav {
+    /* Action: When show nav bar, rotates to -20 degree */
+    transform: rotate(-20deg);
+}
+
+/* Set the nav bar circle's absolute position */
+.circle-container {
+    /* nav bar circle fixes at one position */
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+
+/* Style nav bar circle */
+.circle {
+    background-color: #ff7979;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    position: relative;
+    /* It will transform with the container, so set transition for it */
+    transition: transform 0.5s linear;
+}
+
+/* When container has show nav, style the circle */
+/* The circle will be rotate to display the close button */
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+}
+
+/* .class subclass {} */
+.circle button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100px;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: #fff;
+}
+
+/* focus means when curser points to item, style changes*/
+.circle button:focus {
+    outline: none;
+}
+
+.circle button#open {
+    /*position is related with the circle*/
+    left: 60%;
+}
+
+.circle button#close {
+    /*position is related with the circle*/
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.container.show-nav+nav li {
+    /* translateX(0): move to original position on x-axis */
+    transform: translateX(0);
+    transition-delay: 0.3s;
+}
+
+/* when select <tag>, directly use tag name */
+nav {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    /* Overlapping elements with a larger z-index cover those with a smaller one. */
+    z-index: 100;
+}
+
+nav ul {
+    /* remove bullet points for list style */
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    color: #fff;
+    margin: 40px 0;
+    transform: translate(-100%);
+    transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* +li: choose the li that's right next to prev li 阶梯状*/
+nav ul li+li {
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+
+nav ul li+li+li {
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
+
+
+.content img {
+    max-width: 100%;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.contain h1 {
+    margin: 0;
+}
+
+/* Author name */
+.content small {
+    color: #555;
+    font-style: italic;
+}
+
+.content p {
+    color: 333;
+    /* 行距 */
+    line-height: 1.5;
+}
