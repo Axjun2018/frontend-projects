@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Muli&display=swap');
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e1e1e1;
+    font-family: 'Muli', sans-serif;
+
+    /* horizontal layout in default*/
+    display: flex;
+    flex-direction: column;
+
+    /*horizontal center*/
+    align-items: center;
+
+    /*vertical center*/
+    justify-content: center;
+
+    text-align: center;
+    /*set view high*/
+    height: 100vh;
+
+    /*hide scroll bar*/
+    overflow: hidden;
+
+    margin: 0;
+}
+
+.key {
+    border: 1px solid #999;
+    background-color: #eee;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    flex-direction: column;
+    margin: 10px;
+    min-width: 150px;
+    position: relative; /* content inside key container*/
+}
+
+.key small {
+    position: absolute; /*set <small> outside of key container*/
+    top: -24px;
+    left: 0;  /*start from 0 at left bound of key container */
+    text-align: center;
+    width: 100%;
+    color: #555;
+    font-size: 14px;
+}
