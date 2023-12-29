@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
-/* select everything to style*/
+/* select everything to apply following style*/
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* if there are borders, apply this style*/
 }
 
 body {
