@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Questrial&family=Space+Grotesk:wght@300..700&display=swap');
-@import url('button.css');
+/* @import url('button.css'); */
 
 * {
     margin: 0px;
@@ -34,7 +34,6 @@ nav {
 ul {
     display: inline-flex;
     width: inherit;
-    /* justify-content: space-evenly; */
     padding: 1px;
 }
 ul li {
@@ -88,16 +87,21 @@ main {
     width: 20%;
     padding: 1%;
     color: white;
-    background-color: rgba(208, 96, 76, 0.99);
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #D0604C 100%);
     border: none;
-    border-radius: 1vb;
+    border-radius: 6px;
     font-weight: 700;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "JetBrains Mono",monospace;
     text-align: center;
     letter-spacing: 5px;
+    cursor: pointer;
     position: relative;
     left: 35vw;
     top: 0.5vh;
+}
+.reservation-button:hover{
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #A93356 0 -3px 0 inset;
+    transform: translateY(-2px);
 }
 
 .sections {
