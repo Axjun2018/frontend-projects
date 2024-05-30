@@ -47,11 +47,9 @@ li a:link{
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
-    /* text-shadow: 0 1px 3px gray; */
     background-color:inherit;
 }
 li a:hover {
-    /* text-decoration: underline solid #d0604c 2px; */
     color: #2B2B2B;
 }
 
