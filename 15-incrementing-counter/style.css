@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* select everything to style*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #8e44ad;
+    color: #fff;
+    font-family: 'Roboto Mono', sans-serif;
+    /* horizontal layout in default*/
+    display: flex;
+    /*vertical center*/
+    align-items: center;
+    /*horizontal center*/
+    justify-content: center;
+    /*set view high*/
+    height: 100vh;
+    /*hide scroll bar*/
+    overflow: hidden;
+    margin: 0;
+}
+
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 50px;
+}
+
+.counter {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+@media(max-width: 580px){
+    body {
+        flex-direction: column;
+    }
+}
